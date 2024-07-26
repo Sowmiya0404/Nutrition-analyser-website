@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="{{url_for('static', filename='code.css') }}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@100;300;400;500;700&family=Rowdies:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/b7354b0308.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+<body>
+<div class="background">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="/static/logo.png" width="100px" height="40px" alt="..."></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ms-auto" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('dashboard')}}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('identify')}}">Identify</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('calculation')}}">Calculation</a>
+          </li>
+          <div class="btn-group">
+            <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+              Hospital
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end ">
+              <li><a class="dropdown-item"  href="{{url_for('salem')}}">Salem</a></li>
+              <li><a class="dropdown-item" href="{{url_for('erode')}}">Erode</a></li>
+              <li><a class="dropdown-item" href="{{url_for('tiruppur')}}">Tiruppur</a></li>
+              <li><a class="dropdown-item" href="{{url_for('karur')}}">Karur</a></li>
+              <li><a class="dropdown-item" href="{{url_for('namakkal')}}">Namakal</a></li>
+            </ul>
+          </div>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="bg">
+  <div class="bg-img">
+  <img src="/static/pexels-photo-5945651.webp" alt=""  width="100%" height="700px" ></div>
+  <div class="bg-content">
+    <div class="text-center"><h2>Welcome to nutri!</h2></div>
+    <div><p class="pl-2 para">Hello folks your go-to hub for decoding the nutritional content of your meals!.Giving vital info like pressure, sugar, and calorie counts in seconds. Empower yourself with informed choices for  a healthier lifestyle. Let Nutri be your trusted ally in achieving your wellness goals. Get  ready to fuel your body and thrive with every bite!</p></div>
+    <div class="text-center"> <a href="{{url_for('identify')}}"><button class="btn1">Explore</button></a></div>
+  </div>
+ 
+</div>
+  <div class="container">
+  <div class="contentboth">
+<div class="cont2">
+<div class="my-4 text-primary text-center">
+  <h3>Explore Nutrition.gov</h3>
+</div>
+<hr>
+<div class="row">
+<div class="cont2-head col-md-8">
+  <h4 class="my-3">Online Tools</h4>
+  <p>
+    Nutrition.gov's Online Tools collection offers videos, quizzes, calculators, and games to promote healthy eating and physical activity. Users can watch informative videos, take quizzes to test their knowledge, use calculators to plan meals and track progress, and engage with interactive games for learning. These tools provide valuable resources for individuals seeking to make informed choices and improve their overall health and well-being.
+  </p>
+</div>
+<div class="img  col-md-4">
+  <img src="/static/Dashboard/banner3.jpg" width="800px" height="300px" class="ml-5">
+</div>
+</div>
+</div>
+
+<!-- Content-2 -->
+<div class="cont3">
+<div class="my-4 text-primary text-center">
+  <h3>Learn About USDA Science</h3>
+</div>
+<hr>
+<div class="row">
+  <div class="img col-md-4">
+    <img src="/static/Dashboard/banner4.jpg" width="800px" height="300px" class="mr-5" >
+  </div>
+<div class="ml-3 pl-3 col-md-8" >
+  
+  <h4 class="my-3">Expanded Food and Nutrition Education Program (EFNEP)</h4>
+  <p>
+    Federal Cooperative Extension programs play a crucial role in promoting community health and nutrition security through education initiatives. These programs, administered by the United States Department of Agriculture (USDA), provide evidence-based information and resources to communities nationwide. They offer workshops, classes, and demonstrations on topics such as healthy eating, food safety, gardening, and physical activity. 
+  </p>
+</div>
+</div>
+</div>
+</div>
+ <div class="content mt-4">
+<p><b> Important Notice:</b>
+
+  For personalized health advice, consult a nearby doctor if our recommendations seem ineffective. Individual health needs vary, and professional guidance ensures accuracy. Prioritize your well-being by seeking tailored support from qualified professionals. Your health journey matters, and we're here to assist you. For any questions or concerns, reach out for assistance.</p>
+ </div>
+</div>
+<footer class="footer mt-5 py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <img src="/static/logo.png" alt="" width="200px" />
+        <p class="mt-3">
+          Discover personalized nutrition <br />
+          recommendations tailored just for you!
+        </p>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <img src="/static/mag.jpeg" alt="" width="150px" />
+        <p class="mt-3">
+          Unlock your optimal health with <br />
+          personalized nutrition insights! <br />
+          with our Magazine.
+        </p>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <ul class="list-unstyled">
+          <li>
+            <a href="{{url_for('dashboard')}}">Home</a>
+          </li>
+          <li>
+            <a href="{{url_for('identify')}}">Identify</a>
+          </li>
+          <li>
+            <a href="{{url_for('calculation')}}">Calculation</a>
+          </li>
+          <li>
+            <a href="{{url_for('hospital')}}">Hospital</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <ul class="list-unstyled contact">
+          <li>
+            <a href="#"><i class="fa fa-envelope"></i> nutrihealthpartner@gmail.com</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-phone"></i> 8546213975</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-map-marker"></i> Salem</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<footer class="bg-light">
+  <p class="text-muted p-2 text-center">
+    © 2024 Nutri a health partner. All rights reserved.
+  </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<style>
+  .btn1 {
+  padding: 10px 40px;
+  background-color:crimson;
+  border: 2px solid white;
+  color: white;
+  border-radius: 5px;
+}
+.btn1:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}
+.bg-img{
+  position: relative;
+}
+.bg-content{
+  margin:20px;
+  position: absolute;
+  top: 20%;
+  background-color: rgba(255, 255, 255, 0.288);
+  padding: 20px;
+  height: 100%;
+}
+.para{
+  font-family: "Exo", sans-serif;
+  font-weight: 500;
+  font-size: 19px;
+}
+a {
+text-decoration: none;
+color: black;
+}
+h2{
+  font-size: 60px;
+  font-family: "Orbitron", sans-serif;
+}
+
+</style>

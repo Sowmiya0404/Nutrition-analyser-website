@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="{{url_for('static', filename='code.css') }}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@100;300;400;500;700&family=Rowdies:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><img src="/static/logo.png" width="100px" height="40px" alt="..."
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ms-auto" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('dashboard')}}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('identify')}}">Identify</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('calculation')}}"
+                >Calculation</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Hospital
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdown"
+              >
+                <li>
+                  <a class="dropdown-item" href="{{url_for('salem')}}">Salem</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{{url_for('erode')}}">Erode</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{{url_for('tiruppur')}}"
+                    >Tiruppur</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{{url_for('karur')}}">Karur</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{{url_for('namakkal')}}"
+                    >Namakkal</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="heading text-center my-4">
+        <h2>Cardiology Hospitals in Karur</h2>
+      </div>
+      <div class="text-center">
+        <img
+          src="/static/Cardio/heart.png"
+          height="200px"
+          style="border-radius: 50%"
+          class="mb-4"
+        />
+      </div>
+      <blockquote class="text-center">
+        Cardiologists are doctors who specialize in diagnosing and treating
+        diseases or conditions of the heart and blood vessels—the cardiovascular
+        system. You might also visit a cardiologist so you can learn about your
+        risk factors for heart disease and find out what measures you can take
+        for better heart health
+      </blockquote>
+      <div class="suggestion-head text-center mt-4">
+        <h3 class="mb-4">Suggestion List</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="suggestion-list1 mb-4">
+            <div class="titleborder"><b> Recommended Cardio</b></div>
+            <p>
+              Get at least 150 minutes per week of moderate-intensity aerobic
+              activity or 75 minutes per week of vigorous aerobic activity, or a
+              combination of both, preferably spread throughout the week. Add
+              moderate- to high-intensity muscle-strengthening activity (such as
+              resistance or weights) on at least 2 days per week.
+            </p>
+          </div>
+          <div class="suggestion-list1">
+            <div class="titleborder"><b>Everyday Do</b></div>
+            <p>
+              If you engage in moderate-intensity workouts, such as a brisk
+              walk, then 30 minutes every day can help you reap a variety of
+              benefits. You could also break this up into two 15-minute walks,
+              or three 10-minute walks each day.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="suggestion-list1 mb-4">
+            <div class="titleborder"><b>Recommended Cardio fat</b></div>
+            <p>
+              Running is the winner for most calories burned per hour.
+              Stationary bicycling, jogging, and swimming are excellent options
+              as well. HIIT exercises are also great for burning calories.
+            </p>
+          </div>
+          <div class="suggestion-list1">
+            <div class="titleborder"><b>Cardio Best Improve</b></div>
+            <p>
+              Activities like walking, jogging, running, cycling, swimming,
+              aerobics, rowing, stair climbing, hiking, cross country skiing and
+              many types of dancing are “pure” aerobic activities. Sports such
+              as soccer, basketball, squash and tennis may also improve your
+              cardiovascular fitness.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table my-4">
+          <thead>
+            <tr>
+              <th>Hospital Name</th>
+              <th>Address</th>
+              <th>Contact</th>
+              <th>Timing</th>
+            </tr>
+          </thead>
+            <tr>
+              <td>Nathan Hosptial</td>
+              <td>
+                No 95, Rajaji Street, Karur, Karur - 639001 (Near Old Court & LNVN
+                School)
+              </td>
+              <td>07942604049</td>
+              <td>Open 24 hour</td>
+            </tr>
+            <tr>
+              <td>Deepa Kannan Hospital</td>
+              <td>
+                No 33, Muthu Nagar, Karur West, Karur - 639001 (Near Thinnappa
+                Theater)
+              </td>
+              <td>07942688038</td>
+              <td>Open 24 hour</td>
+            </tr>
+            <tr>
+              <td>Abs Hospital</td>
+              <td>
+                Plot No 161, Thanthonimalai, Karur - 639005 (Near Sivasakthi
+                Nagar,Vangalaman Dept Opp)
+              </td>
+              <td>07947327286</td>
+              <td>Open 24 hour</td>
+            </tr>
+            <tr>
+              <td>Apollo Hospitals</td>
+              <td>
+                No 163 A E, Covai Road, Andankoil, Karur - 639002 (Near Residency
+                Hotel, Alvin Nagar)
+              </td>
+              <td>07942679984</td>
+              <td>Open 24 hour</td>
+            </tr>
+            <tr>
+              <td>Humanlab Diagnostic</td>
+              <td>
+                Kongu Nagar 1st Cross, Pillaiyar Kovil Street, Vengamedue, karur -
+                639006
+              </td>
+              <td>08867856587</td>
+              <td>
+                Mon - Sat 10:00 am - 1:00 pm 5:00 pm - 9:00 pm Sun 11:00 am - 1:00 pm
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="content mt-4">
+        <p><b> Important Notice:</b>
+          For personalized health advice, consult a nearby doctor if our recommendations seem ineffective. Individual health needs vary, and professional guidance ensures accuracy. Prioritize your well-being by seeking tailored support from qualified professionals. Your health journey matters, and we're here to assist you. For any questions or concerns, reach out for assistance.</p>
+         </div>
+    </div>
+    <footer class="footer mt-5 py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <img src="/static/logo.png" alt="" width="200px" />
+            <p class="mt-3">
+              Discover personalized nutrition <br />
+              recommendations tailored just for you!
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <img src="/static/mag.jpeg" alt="" width="150px" />
+            <p class="mt-3">
+              Unlock your optimal health with <br />
+              personalized nutrition insights! <br />
+              with our Magazine.
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <ul class="list-unstyled">
+              <li>
+                <a href="{{url_for('dashboard')}}">Home</a>
+              </li>
+              <li>
+                <a href="{{url_for('identify')}}">Identify</a>
+              </li>
+              <li>
+                <a href="{{url_for('calculation')}}">Calculation</a>
+              </li>
+              <li>
+                <a href="{{url_for('hospital')}}">Hospital</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <ul class="list-unstyled contact">
+              <li>
+                <a href="#"><i class="fa fa-envelope"></i> nutrihealthpartner@gmail.com</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-phone"></i> 8546213975</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-map-marker"></i> Salem</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="bg-light">
+      <p class="text-muted p-2 text-center">
+        © 2024 Nutri a health partner. All rights reserved.
+      </p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

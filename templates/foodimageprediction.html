@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="bg">
+{% if flag%}
+  <div class="list ">
+    <a class="nav-link" href="{{url_for('food')}}">Back</a>
+      <h1 class="text-center mt-5">The Prediction is {{pred}}</h1>
+        <div class="text-center"><img src="{{value}}"   alt="a fruit"  width="300px" height="300px"></div>
+       </div>
+   {% endif %}
+
+
+    <div class="output">
+      
+      <div class="results ">
+        <h2 class="p-3 text-center">Nutrition Content</h2>
+        <div>
+          <div class="text-center">
+            <h3>The following content represents the calories,sugar,fat,protein,magnesium,Potassium,Carbohydrates respectively.</h3>
+          </div>
+         <b> <h3 class="p-2 text-center "> {{content}}</h3></b></div>
+</div>
+</div>
+<div class="para">
+  <p><b>Note:</b> The nutritional information displayed for the food is based on a standard serving size. Nutrition content are calculated per 100 grams of the fruit. Please keep in mind that actual nutritional values may vary slightly based on factors such as ripeness and variety. These values serve as a general guideline for the nutritional content of this food.
+  </p>
+</div>
+</div>
+</body>
+</html>
+<style>
+  body {
+    background-image: url("/static/foodbg-1.avif");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    font-family: "Orbitron", sans-serif;
+  }
+h3{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.text-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mt-5{
+  margin-top: 50px;
+}
+.bg{
+  background-color: rgba(255, 255, 255, 0.61);
+  padding: 20px;
+  height: 100%;
+}
+.para{
+  border: 1px solid lightgray;
+ padding: 10px;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+p{
+  font-family: Arial, Helvetica, sans-serif;
+}
+</style>

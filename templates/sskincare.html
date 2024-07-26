@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="{{url_for('static', filename='code.css') }}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@100;300;400;500;700&family=Rowdies:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="/static/logo.png" width="100px" height="40px" alt="..." />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ms-auto" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('dashboard')}}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('identify')}}">Identify</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('calculation')}}"
+                >Calculation</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Hospital
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdown"
+              >
+                <li>
+                  <a class="dropdown-item" href="{{url_for('salem')}}">Salem</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{{url_for('erode')}}">Erode</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{{url_for('tiruppur')}}"
+                    >Tiruppur</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{{url_for('karur')}}">Karur</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{{url_for('namakkal')}}"
+                    >Namakkal</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="heading text-center my-4">
+        <h2>Skincare Hospitals in Salem</h2>
+      </div>
+      <div class="text-center">
+        <img
+          src="https://img.labelle.in/skin-clinic2.png"
+          height="200px"
+          style="border-radius: 50%"
+        />
+      </div>
+      <blockquote class="text-center">
+        Good skin care is important at any age. The skin has strong collagen and
+        elastin production in the first few decades of life, but it decreases. A
+        good skincare routine helps regenerate skin cell production to keep the
+        skin looking and feeling its best throughout your life..
+      </blockquote>
+      <div class="suggestion-head text-center mt-4">
+        <h3 class="mb-4">Suggestion List</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="suggestion-list1 mb-4">
+            <b class="titleborder">7 steps of skincare</b>
+            <p>
+              Make-up Remover. Before you can get to cleansing your skin, it is
+              important to first remove sebum, make-up and any impurities that
+              may have gathered on your skin during the day. ... Cleanser. ...
+              Exfoliate. ... Toner. ... Serum. ... Moisturiser & Overnight mask.
+              ... Lip care.
+            </p>
+          </div>
+          <div class="suggestion-list1">
+            <b class="titleborder">Three basics of skincare</b>
+            <p>
+              Running is the winner for most calories burned per hour.
+              Stationary bicycling, jogging, and swimming are excellent options
+              as well. HIIT exercises are also great for burning calories.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="suggestion-list1 mb-4">
+            <b class="titleborder">Introduction of skin care</b>
+            <p>
+              Think of your skin-care routine as consisting of three main steps:
+              Cleansing — Washing your face. Toning — Balancing the skin.
+              Moisturizing — Hydrating and softening the skin.
+            </p>
+          </div>
+          <div class="suggestion-list1">
+            <b class="titleborder">First step of skin care</b>
+            <p>
+              The first step to your skincare routine is always cleansing.
+              Cleansers are designed to help remove dirt, debris, and makeup.
+              Cleansing in the morning is necessary to remove oil and build up
+              that may happen overnight.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table my-4">
+          <thead>
+            <tr>
+              <th>Hospital Name</th>
+              <th>Address</th>
+              <th>Contact</th>
+              <th>Timing</th>
+            </tr>
+            <tr>
+              <td>REVATHI HOSPITAL</td>
+              <td>
+                12, Vidyalaya Road, Near Ramakrishna Park, Seerangapalayam, Salem, TN
+                636007
+              </td>
+              <td>0427 231 4484,0427 231 4494</td>
+              <td>Mon-Sat: 9:30am - 1:30pm|3pm - 5pm Sun: Closed</td>
+            </tr>
+            <tr>
+              <td>BALAJI SKIN HOSPITALL</td>
+              <td>257, Sharada College, Main Road, Swarnapuri, Salem, TN 636006</td>
+              <td>94435 77562</td>
+              <td>Mon-Sat: 5pm - 8pm Sun: Closed</td>
+            </tr>
+            <tr>
+              <td>DR KANAKS SKIN HAIR & COSMETOLOGY CLINIC</td>
+              <td>
+                1/11A, Anna Salai, Opp to Murugappa Electricals, Swarnapuri, Salem, TN
+                636004
+              </td>
+              <td>97504 51176</td>
+              <td>Mon-Sat: 10am - 8pm Sun: Closed</td>
+            </tr>
+            <tr>
+              <td>Dr.Monas Dermatology & Advanced Skin & Hair Clinic</td>
+              <td>
+                No-628-342, Junction Main Road, State Bank Colony, Salem - 636005
+                (Opposite to C.J. Pallazio)
+              </td>
+              <td>07942593657</td>
+              <td>Mon-Sat: 7am - 4pm Sun: Closed</td>
+            </tr>
+            <tr>
+              <td>Aishwaryam Speciality Hospital</td>
+              <td>
+                No 114/1, Bangalore Bypass Road, Suramangalam, Salem - 636005 (Near
+                AVR Roundana, Nedunchalai Nagar)
+              </td>
+              <td>08904978267</td>
+              <td>
+                Mon & Sat: 9:30am - 5pm Tue-Fri: 9:30am - 3pm | 5pm - 6pm Sun: Closed
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="content mt-4">
+        <p><b> Important Notice:</b>
+          For personalized health advice, consult a nearby doctor if our recommendations seem ineffective. Individual health needs vary, and professional guidance ensures accuracy. Prioritize your well-being by seeking tailored support from qualified professionals. Your health journey matters, and we're here to assist you. For any questions or concerns, reach out for assistance.</p>
+         </div>
+    </div>
+    <footer class="footer mt-5 py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <img src="/static/logo.png" alt="" width="200px" />
+            <p class="mt-3">
+              Discover personalized nutrition <br />
+              recommendations tailored just for you!
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <img src="/static/mag.jpeg" alt="" width="150px" />
+            <p class="mt-3">
+              Unlock your optimal health with <br />
+              personalized nutrition insights! <br />
+              with our Magazine.
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <ul class="list-unstyled">
+              <li>
+                <a href="{{url_for('dashboard')}}">Home</a>
+              </li>
+              <li>
+                <a href="{{url_for('identify')}}">Identify</a>
+              </li>
+              <li>
+                <a href="{{url_for('calculation')}}">Calculation</a>
+              </li>
+              <li>
+                <a href="{{url_for('hospital')}}">Hospital</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <ul class="list-unstyled contact">
+              <li>
+                <a href="#"><i class="fa fa-envelope"></i> nutrihealthpartner@gmail.com</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-phone"></i> 8546213975</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-map-marker"></i> Salem</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="bg-light">
+      <p class="text-muted p-2 text-center">
+        © 2024 Nutri a health partner. All rights reserved.
+      </p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

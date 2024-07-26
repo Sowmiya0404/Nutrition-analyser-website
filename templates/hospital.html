@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("https://img.freepik.com/premium-photo/heart-with-stethoscope-wooden-table-background-world-health-day-background_244157-1745.jpg?size=626&ext=jpg&ga=GA1.1.550987704.1683519500&semt=sph");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+
+}
+
+/* Float four columns side by side */
+.column { 
+  /* float: left; */
+  /* width: 10%; */
+  /* padding: 10px 10px; */
+  margin-bottom: 9%;
+}
+
+.row {margin: 0 -3px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width:500px) {
+  .column {
+    /* width: 100%; */
+    display: white;
+    margin-bottom: 20px;
+  
+
+  }
+}
+
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(31, 31, 31, 0.927);
+  width: fit-content;
+  padding:5px 10px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgba(245, 243, 241, 0.901);
+  /* color: rgb(211, 202, 202); */
+  cursor: pointer;
+
+}
+.card a i{
+  color:black;
+  font-weight: bold;
+}
+.card:hover{
+  background: green;
+ 
+ 
+}
+
+.card i:hover{
+  color:whitesmoke
+}
+.fa {
+  font-size:larger;
+}
+
+.allcard{
+  width:max-content;
+  /* display:flex; */
+  margin-left: 45%;
+  color:black;
+  margin-top: 10%;
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+padding:50px 130px;
+
+}
+</style>
+</head>
+<body>
+<br>
+<div class="allcard">
+
+  <div class="heading">
+  <div class="title">
+    <h3>All Districts Hospitals</h3>
+  </div>
+  </div>
+
+<!-- Salem -->
+  <div class="row" style="padding-right: 30px; margin-bottom: 20px;">
+
+    <div class="column">
+      <div class="card">
+      <a href="{{url_for('salem')}}"><i class="fa fa-salem">SALEM </i></a>
+      </div>
+
+    </div>
+
+</div>
+
+<!-- Erode -->
+  <div class="row" style=" padding-right: 30px; margin-bottom: 20px;">
+
+      <div class="column">
+
+        <div class="card">
+        <a href="{{url_for('erode')}}"><i class="fa fa-erode">ERODE </i></a>
+        </div>
+
+      </div>
+
+  </div>
+
+  <!-- Trippur -->
+  <div class="row" style=" padding-right: 30px; margin-bottom: 20px;">
+
+    <div class="column">
+
+      <div class="card">
+      <a href="{{url_for('tiruppur')}}"><i class="fa fa-tiruppur">TIRUPPUR</i></a>
+      </div>
+
+    </div>
+
+</div>
+
+<!-- Karur -->
+    <div class="row" style="padding-right: 30px; margin-bottom: 20px;">
+
+      <div class="column">
+
+        <div class="card">
+        <a href="{{url_for('karur')}}"><i class="fa fa-karur">KARUR</i></a>
+        </div>
+
+      </div>
+</div>
+
+
+<!-- Namakkal -->
+      <div class="row" style="margin-bottom: 20px;">
+
+        <div class="column">
+
+          <div class="card">
+          <a href="{{url_for('namakkal')}}"><i class="fa fa-namakkal">NAMAKKAL</i></a>
+          </div>
+
+        </div>
+
+</div>
+
+</div>
+
+</body>
+</html>

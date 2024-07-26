@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="{{url_for('static', filename='code.css') }}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@100;300;400;500;700&family=Rowdies:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/b7354b0308.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+<body>
+<div class="background">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="/static/logo.png" width="100px" height="40px" alt="..."></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ms-auto" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('dashboard')}}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('identify')}}">Identify</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('calculation')}}">Calculation</a>
+          </li>
+          <div class="btn-group">
+            <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+              Hospital
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end ">
+              <li><a class="dropdown-item"  href="{{url_for('salem')}}">Salem</a></li>
+              <li><a class="dropdown-item" href="{{url_for('erode')}}">Erode</a></li>
+              <li><a class="dropdown-item" href="{{url_for('tiruppur')}}">Tiruppur</a></li>
+              <li><a class="dropdown-item" href="{{url_for('karur')}}">Karur</a></li>
+              <li><a class="dropdown-item" href="{{url_for('namakkal')}}">Namakal</a></li>
+            </ul>
+          </div>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container mt-5">
+    <ul class="nav nav-pills d-flex align-items-center justify-content-center" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="calorie-tab" data-bs-toggle="pill" data-bs-target="#calorie" type="button" role="tab" aria-controls="calorie" aria-selected="true">Calorie Calculator</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link " id="sugar-tab" data-bs-toggle="pill" data-bs-target="#sugar" type="button" role="tab" aria-controls="sugar" aria-selected="false">Sugar Analyzer</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link " id="pressure-tab" data-bs-toggle="pill" data-bs-target="#pressure" type="button" role="tab" aria-controls="pressure" aria-selected="false">Pressure Analyzer</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="calorie" role="tabpanel" aria-labelledby="calorie-tab">
+       <h2 class="mt-4 text-center">Calorie Calculator</h2>
+       <div class="bg">
+       <form id="caloriesForm" class="my-4">
+        <label for="age">Age (years):</label>
+        <input type="number" id="age" name="age" required><br>
+        
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" name="height" required><br>
+        
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" required><br>
+        
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select><br>
+        
+        <label for="activityLevel">Activity Level:</label>
+        <select id="activityLevel" name="activityLevel" required>
+          <option value="1.2">Sedentary (little or no exercise)</option>
+          <option value="1.375">Lightly Active (light exercise / sports 1-3 days a week)</option>
+          <option value="1.55">Moderately Active (moderate exercise / sports 3-5 days a week)</option>
+          <option value="1.725">Very Active (hard exercise / sports 6-7 days a week)</option>
+          <option value="1.9">Extra Active (very hard exercise / sports & physical job or 2x training)</option>
+        </select><br>
+        
+       <div class="text-center mt-1"> <button type="submit" class="btn btn-primary">Calculate</button></div>
+      </form>
+    </div>
+      <div id="result"></div>
+      </div>
+      <div class="tab-pane fade" id="sugar" role="tabpanel" aria-labelledby="sugar-tab">
+        <!-- Content for Sugar Analyzer -->
+
+
+
+        <h2 class="mt-4 text-center">Sugar Level Checker</h2>
+<div class="container ">
+  <div class="bg">
+  <form id="sugarForm" class="my-4">
+    <div class="mb-3">
+      <label for="age1" class="form-label">Age:</label>
+      <input type="number" id="age1" name="age" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="sugarLevelBefore" class="form-label">Sugar Level Before Food (mg/dL):</label>
+      <input type="number" id="sugarLevelBefore" name="sugarLevelBefore" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="sugarLevelAfter" class="form-label">Sugar Level After Food (mg/dL):</label>
+      <input type="number" id="sugarLevelAfter" name="sugarLevelAfter" class="form-control" required>
+    </div>
+    <div class="text-center mt-1"> <button type="submit" class="btn btn-primary">Submit</button></div>
+  </form>
+</div>
+  <div id="result1" class="mt-4"></div>
+</div>
+      </div>
+      <div class="tab-pane fade" id="pressure" role="tabpanel" aria-labelledby="pressure-tab">
+        <!-- Content for Pressure Analyzer -->
+
+
+
+        <h2 class="mt-4 text-center">Blood Pressure Calculator</h2>
+<div class="container">
+  <div class=" bg">
+  <form id="pressureForm" class="my-4">
+    <div class="mb-3">
+      <label for="systolic" class="form-label">Systolic Pressure (mmHg):</label>
+      <input type="number" id="systolic" name="systolic" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="diastolic" class="form-label">Diastolic Pressure (mmHg):</label>
+      <input type="number" id="diastolic" name="diastolic" class="form-control" required>
+    </div>
+    <div class="text-center mt-1"> <button type="submit" class="btn btn-primary">Calculate</button></div>
+  </form>
+</div>
+  <div id="result2" class="mt-4"></div>
+</div>
+      </div>
+    </div>
+    <div class="content mt-4">
+      <p><b> Important Notice:</b>
+        For personalized health advice, consult a nearby doctor if our recommendations seem ineffective. Individual health needs vary, and professional guidance ensures accuracy. Prioritize your well-being by seeking tailored support from qualified professionals. Your health journey matters, and we're here to assist you. For any questions or concerns, reach out for assistance.</p>
+       </div>
+  </div>
+  <footer class="footer mt-5 py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <img src="/static/logo.png" alt="" width="200px" />
+          <p class="mt-3">
+            Discover personalized nutrition <br />
+            recommendations tailored just for you!
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <img src="/static/mag.jpeg" alt="" width="150px" />
+          <p class="mt-3">
+            Unlock your optimal health with <br />
+            personalized nutrition insights! <br />
+            with our Magazine.
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <ul class="list-unstyled">
+            <li>
+              <a href="{{url_for('dashboard')}}">Home</a>
+            </li>
+            <li>
+              <a href="{{url_for('identify')}}">Identify</a>
+            </li>
+            <li>
+              <a href="{{url_for('calculation')}}">Calculation</a>
+            </li>
+            <li>
+              <a href="{{url_for('hospital')}}">Hospital</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <ul class="list-unstyled contact">
+            <li>
+              <a href="#"><i class="fa fa-envelope"></i> nutrihealthpartner@gmail.com</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-phone"></i> 8546213975</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-map-marker"></i> Salem</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <footer class="bg-light">
+    <p class="text-muted text-center">
+      © 2024 Nutri a health partner. All rights reserved.
+    </p>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+<script>
+  document.getElementById("caloriesForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+    
+    // Get form values
+    var age = parseInt(document.getElementById("age").value);
+    var height = parseInt(document.getElementById("height").value);
+    var weight = parseInt(document.getElementById("weight").value);
+    var gender = document.getElementById("gender").value;
+    var activityLevel = parseFloat(document.getElementById("activityLevel").value);
+    
+    // Calculate BMR
+    var bmr;
+    if (gender === "male") {
+      bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+    } else {
+      bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+    }
+    
+    // Calculate daily calorie needs
+    var calorieNeeds = bmr * activityLevel;
+    
+    // Display result
+    var resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = "<h2>Calories Needed Per Day: " + calorieNeeds.toFixed(2) + " kcal</h2>";
+    
+    // Suggest foods based on calorie needs
+    var foodList = document.createElement("ul");
+    foodList.classList.add("food-list");
+    if (calorieNeeds <= 1500) {
+      foodList.innerHTML = `
+        <li class="food-item"><img src="https://somiigbene.com/wp-content/uploads/2023/04/Oatmeal-with-Berries-Greek-Yoghurt-Featured-1200x900.jpg" alt="Oatmeal"> Oatmeal, Greek yogurt, berries</li>
+        <li class="food-item"><img src="https://www.vibrantplate.com/wp-content/uploads/2016/09/Salad-05.jpg" alt="Grilled chicken salad"> Grilled chicken salad, mixed vegetables</li>
+        <li class="food-item"><img src="https://www.idealyou.us/wp-content/uploads/2021/09/salmon-with-quinoa-and-broccoli.jpg" alt="Baked salmon"> Baked salmon, quinoa, steamed broccoli</li>
+      `;
+    } else if (calorieNeeds <= 2000) {
+      foodList.innerHTML = `
+        <li class="food-item"><img src="https://feelgoodfoodie.net/wp-content/uploads/2019/01/Avocado-Toast-with-Egg-9.jpg" alt="Whole grain toast with avocado"> Whole grain toast with avocado, scrambled eggs</li>
+        <li class="food-item"><img src="https://legenrecipes.com/wp-content/uploads/2016/06/Turkey-veggie-sandwich.jpg" alt="Turkey sandwich"> Turkey sandwich on whole wheat bread, vegetable soup</li>
+        <li class="food-item"><img src="https://www.skinnytaste.com/wp-content/uploads/2021/09/Tofu-Stir-Fry-8.jpg" alt="Stir-fried tofu"> Stir-fried tofu with vegetables, brown rice</li>
+      `;
+    } else {
+      foodList.innerHTML = `
+        <li class="food-item"><img src="https://www.keepingthepeas.com/wp-content/uploads/2022/06/banana-spinach-smoothie-4.jpg" alt="Smoothie with spinach"> Smoothie with spinach, banana, protein powder</li>
+        <li class="food-item"><img src="https://hannahmageerd.com/wp-content/uploads/2022/02/IMG_0590-700x1050.jpg" alt="Quinoa salad"> Quinoa salad with chickpeas, kale, and feta cheese</li>
+        <li class="food-item"><img src="https://media.self.com/photos/58af3ccfb4e983785e9c1f80/master/w_1600,c_limit/filet-mignon-fore296.jpg" alt="Grilled steak"> Grilled steak, sweet potato, asparagus</li>
+      `;
+    }
+    resultDiv.appendChild(foodList);
+  });
+</script>
+
+
+
+<script>
+  document.getElementById("sugarForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+    
+    // Get values from form
+    var age = parseInt(document.getElementById("age1").value);
+    var sugarLevelBefore = parseInt(document.getElementById("sugarLevelBefore").value);
+    var sugarLevelAfter = parseInt(document.getElementById("sugarLevelAfter").value);
+    
+    // Determine sugar level condition before and after food intake
+    var conditionBefore, conditionAfter, overallCondition;
+    if (sugarLevelBefore < 70) {
+      conditionBefore = "Low";
+    } else if (sugarLevelBefore >= 70 && sugarLevelBefore <= 140) {
+      conditionBefore = "Normal";
+    } else {
+      conditionBefore = "High";
+    }
+    if (sugarLevelAfter < 70) {
+      conditionAfter = "Low";
+    } else if (sugarLevelAfter >= 70 && sugarLevelAfter <= 140) {
+      conditionAfter = "Normal";
+    } else {
+      conditionAfter = "High";
+    }
+    
+    // Determine overall sugar level condition
+    if (conditionBefore === "Normal" && conditionAfter === "Normal") {
+      overallCondition = "Normal";
+    } else if (conditionBefore === "High" || conditionAfter === "High") {
+      overallCondition = "High";
+    } else {
+      overallCondition = "Low";
+    }
+    
+    // Display result
+    var resultDiv = document.getElementById("result1");
+    resultDiv.innerHTML = "<h2>Overall Sugar Level Condition: " + overallCondition + "</h2>";
+    
+    // Suggest foods based on overall sugar level condition
+    var breakfastFoods, lunchFoods, dinnerFoods;
+    switch(overallCondition) {
+      case "Low":
+        breakfastFoods = [
+          { name: "Fruit Juice", image: "https://files.selecthealth.cloud/api/public/content/226070-fuice_juice_blog_lg.jpg" },
+          { name: "Granola Bar", image: "https://bellyfull.net/wp-content/uploads/2021/02/Chewy-Granola-Bars-blog-768x1024.jpg" },
+          { name: "Oatmeal", image: "https://mattsfitchef.com/wp-content/uploads/2023/12/Low-Calorie-Oatmeal-682x1024.jpg" },
+          { name: "Yogurt", image: "https://www.allrecipes.com/thmb/DVQUeiL7iaTH2b8_hBGzQBf_x0U=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/1028395-authentic-homemade-yogurt-MTRmenian-4x3-1-0c66078e9bd64cada5606bf2d85db601.jpg" },
+          { name: "Fruit Salad", image: "https://www.coinedcuisine.com/wp-content/uploads/2023/06/Coined-Cuisine_Rainbow-Fruit-Salad-P-640x853.jpg" }
+        ];
+        lunchFoods = [
+          { name: "Sandwich", image: "https://www.foodandwine.com/thmb/XdxTq3crr7v8zwtVIT9vra4oNno=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Classic-Club-Sandwich-FT-RECIPE0523-99327c9c87214026b9419b949ee13a9c.jpg" },
+          { name: "Salad", image: "https://www.thespruceeats.com/thmb/-Mp_j2BLRb87Xcap81pB_FBPCjQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/SES-our-favorite-simple-green-salad-recipe-7370448-hero-01-4ca9788a0a3c4d53b70f1d07f8382b7f.jpg" },
+          { name: "Soup", image: "https://www.inspiredtaste.net/wp-content/uploads/2018/10/Homemade-Vegetable-Soup-Recipe-1-1200.jpg" }
+        ];
+        dinnerFoods = [
+          { name: "Grilled Chicken", image: "https://www.jocooks.com/wp-content/uploads/2022/07/grilled-chicken-breast-1-20-768x960.jpg" },
+          { name: "Steamed Vegetables", image: "https://www.iheartnaptime.net/wp-content/uploads/2021/01/steamed-vegetables-4.jpg" },
+          { name: "Brown Rice", image: "https://cookieandkate.com/images/2019/05/perfect-brown-rice-recipe-1-768x1154.jpg"}
+        ];
+        break;
+      case "Normal":
+        breakfastFoods = [
+          { name: "Balanced Diet", image: "https://cdn.shopify.com/s/files/1/0552/5159/9557/files/Balanced_Diet_What_is_it_and_Why_is_it_Important.jpg?v=1660738323" },
+          { name: "Fruit Salad", image: "https://shwetainthekitchen.com/wp-content/uploads/2021/08/Fruit-Salad-with-Condensed-Milk.jpg" }
+        ];
+        lunchFoods = [
+          { name: "Balanced Diet", image: "https://cdn.shopify.com/s/files/1/0552/5159/9557/files/Balanced_Diet_What_is_it_and_Why_is_it_Important.jpg?v=1660738323" },
+          { name: "Salad", image: "https://www.thespruceeats.com/thmb/-Mp_j2BLRb87Xcap81pB_FBPCjQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/SES-our-favorite-simple-green-salad-recipe-7370448-hero-01-4ca9788a0a3c4d53b70f1d07f8382b7f.jpg" }
+        ];
+        dinnerFoods = [
+          { name: "Balanced Diet", image: "https://cdn.shopify.com/s/files/1/0552/5159/9557/files/Balanced_Diet_What_is_it_and_Why_is_it_Important.jpg?v=1660738323" },
+          { name: "Steamed Vegetables", image: "https://www.iheartnaptime.net/wp-content/uploads/2021/01/steamed-vegetables-4.jpg" }
+        ];
+        break;
+      case "High":
+        breakfastFoods = [
+          { name: "Whole Grains", image: "https://www.eatright.org/-/media/images/eatright-articles/eatright-article-feature-images/whatisawholegrain_600x450.jpg?as=0&w=967&rev=f6f247861a9c4bafb8ca2acae18d49f0&hash=74407E1D12D34FC3B256E3225340A083" },
+          { name: "Fruits", image: "https://www.euroschoolindia.com/wp-content/uploads/2023/10/importance-of-eating-a-variety-of-fruits-for-kids-health-jpg.webp" },
+          { name: "Vegetables", image: "https://www.bhg.com/thmb/cX9GeFKdow2d4mNqEbMRTXjpoZQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/difference-between-fruits-vegetables-01-5f92e7ec706b463287bcfb46985698f9.jpg" }
+        ];
+        lunchFoods = [
+          { name: "Whole Grains", image: "https://www.eatright.org/-/media/images/eatright-articles/eatright-article-feature-images/whatisawholegrain_600x450.jpg?as=0&w=967&rev=f6f247861a9c4bafb8ca2acae18d49f0&hash=74407E1D12D34FC3B256E3225340A083" },
+          { name: "Fruits", image: "https://www.euroschoolindia.com/wp-content/uploads/2023/10/importance-of-eating-a-variety-of-fruits-for-kids-health-jpg.webp" },
+          { name: "Vegetables", image: "https://www.bhg.com/thmb/cX9GeFKdow2d4mNqEbMRTXjpoZQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/difference-between-fruits-vegetables-01-5f92e7ec706b463287bcfb46985698f9.jpg" }
+        ];
+        dinnerFoods = [
+          { name: "Whole Grains", image: "https://www.eatright.org/-/media/images/eatright-articles/eatright-article-feature-images/whatisawholegrain_600x450.jpg?as=0&w=967&rev=f6f247861a9c4bafb8ca2acae18d49f0&hash=74407E1D12D34FC3B256E3225340A083" },
+          { name: "Fruits", image: "https://www.euroschoolindia.com/wp-content/uploads/2023/10/importance-of-eating-a-variety-of-fruits-for-kids-health-jpg.webp" },
+          { name: "Vegetables", image: "https://www.bhg.com/thmb/cX9GeFKdow2d4mNqEbMRTXjpoZQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/difference-between-fruits-vegetables-01-5f92e7ec706b463287bcfb46985698f9.jpg" }
+        ];
+        break;
+      default:
+        breakfastFoods = [];
+        lunchFoods = [];
+        dinnerFoods = [];
+    }
+    
+    // Generate HTML for suggested foods
+    var foodsHTML = "<h3 class='mt-4'>Suggested breakfast foods:</h3>";
+    breakfastFoods.forEach(function(food) {
+      foodsHTML += "<div class='food-item'><img src='" + food.image + "' alt='" + food.name + "'><span class='ms-2'>" + food.name + "</span></div>";
+    });
+    foodsHTML += "<h3 class='mt-4'>Suggested lunch foods:</h3>";
+    lunchFoods.forEach(function(food) {
+      foodsHTML += "<div class='food-item'><img src='" + food.image + "' alt='" + food.name + "'><span class='ms-2'>" + food.name + "</span></div>";
+    });
+    foodsHTML += "<h3 class='mt-4'>Suggested dinner foods:</h3>";
+    dinnerFoods.forEach(function(food) {
+      foodsHTML += "<div class='food-item'><img src='" + food.image + "' alt='" + food.name + "'><span class='ms-2'>" + food.name + "</span></div>";
+    });
+    
+    resultDiv.innerHTML += foodsHTML;
+  });
+</script>
+
+
+
+<script>
+  document.getElementById("pressureForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+    
+    // Get form values
+    var systolic = parseInt(document.getElementById("systolic").value);
+    var diastolic = parseInt(document.getElementById("diastolic").value);
+    
+    // Determine blood pressure level
+    var pressureLevel;
+if (systolic < 90 || diastolic < 60) {
+  pressureLevel = "Low";
+} else if (systolic >= 140 || diastolic >= 90) {
+  pressureLevel = "High";
+} else if (systolic >= 90 && systolic < 120 && diastolic >= 60 && diastolic < 80) {
+  pressureLevel = "Normal";
+}
+
+    
+    // Display result
+    var resultDiv = document.getElementById("result2");
+    resultDiv.innerHTML = `
+  <h2>Your Blood Pressure Level: ${pressureLevel}</h2>
+  <h3>Suggested Foods:</h3>
+`;
+    
+    // Suggest foods based on blood pressure level
+    var foodList = document.createElement("ul");
+    foodList.classList.add("list-group");
+    if (pressureLevel === "Low") {
+      foodList.innerHTML = `
+      <li class="food-item"><img src="https://fruitboxco.com/cdn/shop/products/asset_2_400x.jpg?v=1571839043" alt="banana"> Bananas</li>
+      <li class="food-item"><img src="https://www.asknestle.in/sites/default/files/styles/webp/public/2022-10/Green-Leafy-Vegetables-1250x380.jpg.webp" alt="healthy">Leafy green vegetables</li>
+      <li class="food-item"><img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2023/08/Poached-Salmon-4-1025x1536.jpg" alt="healthy">Salmon</li>
+      <li class="food-item"><img src="https://www.myhealthybreakfast.in/images/articles/lentils-beans.jpg" alt="healthy">Beans and lentils</li>
+      `;
+    } else if (pressureLevel === "Normal") {
+      foodList.innerHTML = `
+        <li class="food-item"><img src="https://img.freepik.com/premium-photo/food-collection-fruits-apple-orange-berries-apricots-apples-oranges-fresh-fruit-isolated-white_770123-2586.jpg?w=740" alt="healthy">Fruits (e.g., berries, oranges)</li>
+        <li class="food-item"><img src="https://thenessykitchen.com/wp-content/uploads/2023/04/sauteed-carrots-and-spinach-6.jpg" alt="healthy">Vegetables (e.g., carrots, spinach)</li>
+        <li class="food-item"><img src="https://as1.ftcdn.net/v2/jpg/01/97/63/42/1000_F_197634257_mDpGJcYDpYHlNzT0QsuGSnI3Oxen0Aec.jpg" alt="healthy">Whole grains (e.g., brown rice, quinoa)</li>
+        <li class="food-item"><img src="https://hips.hearstapps.com/hmg-prod/images/screen-shot-2021-07-07-at-8-49-46-pm-1625705393.png?crop=0.9689655172413794xw:1xh;center,top&resize=640:*" alt="healthy">Lean proteins (e.g., chicken breast, tofu)</li>
+      `;
+    } else {
+      foodList.innerHTML = `
+        <li class="food-item"><img src="https://sukhis.com/app/uploads/2022/06/image2-1024x684.jpg" alt="healthy">Herbs and spices</li>
+        <li class="food-item"><img src="https://cu-website-cms-prd.s3.amazonaws.com/What_Is_Considered_Dairy_05c22c3c63.jpg" alt="healthy">Dairy and dairy alternatives</li>
+        <li class="food-item"><img src="https://food-ubc.b-cdn.net/wp-content/uploads/2023/01/AdobeStock_246017984-1536x1024.jpeg" alt="healthy">Plant-based proteins</li>
+        <li class="food-item"><img src="https://www.lalpathlabs.com/blog/wp-content/uploads/2019/01/Fruits-and-Vegetables.jpg" alt="healthy">Fruits and vegetables</li>
+      `;
+    }
+    resultDiv.appendChild(foodList);
+  });
+</script>
+
+</body>
+</html>
+<style>
+  
+a {
+  text-decoration: none;
+  color: black !important;
+}
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  button:hover {
+    opacity: 0.7;
+  }
+  #result {
+    margin-top: 20px;
+  }
+  .food-list {
+    list-style: none;
+    padding: 0;
+  }
+  .food-item {
+    margin-bottom: 5px;
+  }
+  .food-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 4px;
+  }
+  form {
+  max-width: 500px;
+  margin: 0 auto; 
+  background-color: rgb(200, 200, 200);
+  padding: 20px;
+  border-radius: 5px;
+
+}
+.bg{
+  background-color: rgb(222, 222, 222);
+  padding: 10px;
+}
+.btn-primary{
+  background-color: crimson !important;
+  border: none !important;
+}
+.nav-pills .nav-link.active{
+  background-color: crimson !important;
+  border: none !important;
+  color: white !important;
+}
+.nav-link{
+  color: black !important;
+}
+
+
+@media (max-width: 576px) {
+  form {
+    max-width: 100%;
+  }
+}
+</style>

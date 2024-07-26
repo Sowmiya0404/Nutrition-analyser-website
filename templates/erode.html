@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="{{url_for('static', filename='code.css') }}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@100;300;400;500;700&family=Rowdies:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/b7354b0308.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="/static/logo.png" width="100px" height="40px" alt="..." />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ms-auto" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('dashboard')}}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('identify')}}">Identify</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('calculation')}}"
+                >Calculation</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Hospital
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdown"
+              >
+                <li>
+                  <a class="dropdown-item" href="{{url_for('salem')}}">Salem</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{{url_for('erode')}}">Erode</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{{url_for('tiruppur')}}"
+                    >Tiruppur</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{{url_for('karur')}}">Karur</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{{url_for('namakkal')}}"
+                    >Namakkal</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HTML -->
+
+    <div>
+      <img
+        class="img-blur"
+        src="/static/erode.jpg"
+        width="100%"
+        height="auto"
+      />
+    </div>
+    <div class="container">
+      <div class="text-center my-4">
+        <h3>NUTRITIONAL ERODE</h3>
+      </div>
+      <div class="text-center pb-4">
+        <i class="fw-bold fs-2">Best Specialized Hospitals in Erode</i>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title text-center">Cardiologist</h5>
+              <img
+                src="/static/cardiologist.jpg"
+                alt=""
+                class="w-100"
+                height="300px"
+              />
+              <p>
+                Visit our Cardiology Department for expert heart care. Our
+                experienced cardiologists offer personalized treatment plans.
+                From diagnostic testing to preventive care, we prioritize your
+                heart health. Schedule an appointment today for comprehensive
+                cardiac evaluation. Trust Nutritional Salem Hospital for
+                superior cardiology services.
+              </p>
+              <div class="align-self-end">
+                <a
+                  href="{{url_for('ecardiologist')}}"
+                  class="btn btn-outline-primary w-100"
+                  >Explore</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title text-center">Neurologist</h5>
+              <img
+                src="/static/neurologist.jpg"
+                alt=""
+                class="w-100"
+                height="300px"
+              />
+              <p>
+                Experience unparalleled neurological care at Nutritional Salem
+                Hospital. Our neurologists provide cutting-edge treatments for
+                various neurological conditions. Whether you need diagnostic
+                testing or ongoing management, we're here for you. Trust our
+                expertise to address your neurological concerns effectively.
+              </p>
+              <div class="align-self-end">
+                <a
+                  href="{{url_for('eneurologist')}}"
+                  class="btn btn-outline-primary w-100"
+                  >Explore</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title text-center">Skincare</h5>
+              <img
+                src="/static/skincaree.jpg"
+                alt=""
+                class="w-100"
+                height="300px"
+              />
+              <p>
+                Transform your skin with personalized skincare treatments at
+                Nutritional Salem Hospital. Our experts deliver tailored
+                solutions for acne, aging, and more, addressing your unique
+                concerns effectively. Benefit from comprehensive skincare
+                services designed to rejuvenate and revitalize your complexion.
+               
+              </p>
+              <div class="align-self-end">
+                <a
+                  href="{{url_for('eskincare')}}"
+                  class="btn btn-outline-primary w-100"
+                  >Explore</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title text-center">Diabetes</h5>
+              <img
+                src="/static/diabetes.jpg"
+                alt=""
+                class="w-100"
+                height="300px"
+              />
+              <p>
+                Receive personalized diabetes care at Nutritional Salem
+                Hospital. Our specialists design comprehensive treatment plans
+                for effective blood sugar control and complication prevention.
+                With tailored approaches including medication and lifestyle
+                adjustments, we ensure holistic support throughout your diabetes
+                management journey.
+              </p>
+              <div class="align-self-end">
+                <a
+                  href="{{url_for('ediabetes')}}"
+                  class="btn btn-outline-primary w-100"
+                  >Explore</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title text-center">Nutritionist</h5>
+              <img
+                src="/static/neutritionist.webp"
+                alt=""
+                class="w-100"
+                height="300px"
+              />
+              <p>
+                Achieve your wellness goals with tailored nutrition plans at
+                Nutritional Salem Hospital. Our expert nutritionists craft
+                personalized dietary regimens to suit your needs and lifestyle.
+                Whether it's weight loss, medical management, or overall health
+                enhancement, we offer evidence-based guidance and ongoing
+                support. Schedule a consultation today for a healthier tomorrow!
+              </p>
+              <div class="align-self-end">
+                <a
+                  href="{{url_for('echildspecialist')}}"
+                  class="btn btn-outline-primary w-100"
+                  >Explore</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content mt-4">
+        <p><b> Important Notice:</b>
+          For personalized health advice, consult a nearby doctor if our recommendations seem ineffective. Individual health needs vary, and professional guidance ensures accuracy. Prioritize your well-being by seeking tailored support from qualified professionals. Your health journey matters, and we're here to assist you. For any questions or concerns, reach out for assistance.</p>
+         </div>
+    </div>
+    <footer class="footer mt-5 py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <img src="/static/logo.png" alt="" width="200px" />
+            <p class="mt-3">
+              Discover personalized nutrition <br />
+              recommendations tailored just for you!
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <img src="/static/mag.jpeg" alt="" width="150px" />
+            <p class="mt-3">
+              Unlock your optimal health with <br />
+              personalized nutrition insights! <br />
+              with our Magazine.
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <ul class="list-unstyled">
+              <li>
+                <a href="{{url_for('dashboard')}}">Home</a>
+              </li>
+              <li>
+                <a href="{{url_for('identify')}}">Identify</a>
+              </li>
+              <li>
+                <a href="{{url_for('calculation')}}">Calculation</a>
+              </li>
+              <li>
+                <a href="{{url_for('hospital')}}">Hospital</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <ul class="list-unstyled contact">
+              <li>
+                <a href="#"
+                  ><i class="fa fa-envelope"></i>
+                  nutrihealthpartner@gmail.com</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-phone"></i> 8546213975</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-map-marker"></i> Salem</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="bg-light">
+      <p class="text-muted  text-center">
+        © 2024 Nutri a health partner. All rights reserved.
+      </p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+<style>
+  .img-blur {
+    opacity: 0.8;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+</style>
